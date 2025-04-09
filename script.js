@@ -1,2 +1,13 @@
-// Por ahora vacío, pero podés agregar interactividad acá más adelante
-console.log("Portafolio cargado correctamente");
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const target = this.dataset.section;
+    
+    // Oculta todas las secciones
+    document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+
+    // Muestra solo la seleccionada
+    document.getElementById(target).classList.add('activa');
+  });
+});
